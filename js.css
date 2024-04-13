@@ -1,0 +1,175 @@
+/* CSS Stylesheet */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+nav {
+    background-color: #a7cec9;
+    text-align: center;
+}
+
+nav li {
+    padding: 10px 20px 15px 20px;
+    display: inline-block;
+
+}
+
+nav li a {
+    color: white;
+    font-size: small;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#logo {
+    text-transform: uppercase;
+    padding: 6px 15px 6px 15px;
+    border-radius: 20px;
+    background: -webkit-linear-gradient(#eee, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+header section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#menu {
+    /* height: 30vh; */
+    background-color: #a7cec9;
+    padding: 20px 20px 20px 20px;
+}
+
+#menu button {
+    background-color: #292d30;
+    color: #a7cec9;
+    border: 0;
+    border-radius: 15px;
+    padding: 5px 20px 5px 20px;
+    margin: 3px;
+}
+
+button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+article section {
+    padding: 40px 100px 40px 100px;
+}
+
+.bg-dark {
+    background-color: #292d30
+}
+
+.bg-dark h3,
+.bg-dark a {
+    color: white;
+    font-weight: bold;
+}
+
+.bg-dark p {
+    color: #a7cec9;
+    font-size: small;
+}
+
+.bg-dark blockquote {
+    background-color: #3f454a;
+    color: white;
+}
+
+
+.bg-white p {
+    font-size: small;
+}
+
+.bg-white h3,
+.bg-white a {
+    font-weight: bold;
+}
+
+.bg-white blockquote {
+    background-color: #292d30;
+    color: #a7cec9;
+}
+
+
+.bg-blue {
+    background-color: #a7cec9;
+}
+
+.bg-blue h3,
+.bg-blue a {
+    color: #292d30;
+    font-weight: bold;
+}
+
+.bg-blue p {
+    color: #292d30;
+    font-size: small;
+}
+
+.bg-blue blockquote {
+    background-color: #b9e3dd;
+    color: #292d30;
+}
+
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+aside div {
+    margin: 2%;
+
+}
+
+blockquote {
+    margin-top: 3px;
+    width: 100%;
+    padding: 10px 5px 10px 5px;
+    /* text-align: center; */
+    font-size: 10px;
+    font-style: italic;
+
+}
+
+
+
+
+footer section {
+    margin: 1%;
+    font-size: small;
+    color: #292d30;
+    text-align: center;
+}
+
+
+
+
+@media (max-width: 1000px) {
+
+    .flex {
+        display: block;
+    }
+
+    article section {
+        padding: 40px 20px 40px 20px;
+    }
+
+    
+}

@@ -1,0 +1,848 @@
+<!doctype html>
+
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>JS - Yosita</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="js.css">
+</head>
+
+<script>
+    var arr_content = ['jsbasics', 'loop', 'IfElse', 'Variablesx', 'DataTypes', 'Strings', 'Events', 'NumbersandMath', 'Dates', 'Arrays', 'GlobalFunctions', 'RegularExpressions', 'Errors', 'JSONj', 'Promises']
+    function go(content) {
+
+        for (let i of arr_content) {
+            if (i == content || content == 'all') {
+                document.getElementById(i).style.display = 'block';
+                if (content == 'all') {
+                    document.getElementById('btn_' + i).style.backgroundColor = '#292d30';
+                    document.getElementById('btn_all').style.backgroundColor = 'white';
+                } else {
+                    document.getElementById('btn_' + i).style.backgroundColor = 'white';
+                    document.getElementById('btn_all').style.backgroundColor = '#292d30';
+                }
+
+            } else {
+                document.getElementById(i).style.display = 'none';
+
+                document.getElementById('btn_' + i).style.backgroundColor = '#292d30';
+            }
+        }
+    }
+</script>
+
+<body>
+    <main>
+        <header>
+            <nav>
+                <ul>
+                    <li><a id="logo" href="#">JS Cheat Sheet</a></li>
+                </ul>
+                <div>
+                    <img width="64" height="64"
+                        src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/100/external-js-file-computer-programming-icons-flaticons-lineal-color-flat-icons.png"
+                        alt="external-js-file-computer-programming-icons-flaticons-lineal-color-flat-icons" /><br>
+                </div>
+            </nav>
+
+            <section id="menu">
+
+                <div>
+                    <button id="btn_all" onclick="go('all')">All</button>
+                    <button id="btn_jsbasics" onclick="go('jsbasics')">JS Basics</button>
+                    <button id="btn_loop" onclick="go('loop')">Loop</button>
+                    <button id="btn_IfElse" onclick="go('IfElse')">If-Else</button>
+                    <button id="btn_Variablesx" onclick="go('Variablesx')">Variables x</button>
+                    <button id="btn_DataTypes" onclick="go('DataTypes')">Data Types</button>
+                    <button id="btn_Strings" onclick="go('Strings')">Strings</button>
+                    <button id="btn_Events" onclick="go('Events')">Events</button>
+                    <button id="btn_NumbersandMath" onclick="go('NumbersandMath')">Numbers and Math</button>
+                    <button id="btn_Dates" onclick="go('Dates')">Dates</button>
+                    <button id="btn_Arrays" onclick="go('Arrays')">Arrays</button>
+                    <button id="btn_GlobalFunctions" onclick="go('GlobalFunctions')">Global Functions()</button>
+                    <button id="btn_RegularExpressions" onclick="go('RegularExpressions')">Regular Expressions</button>
+                    <button id="btn_Errors" onclick="go('Errors')">Errors</button>
+                    <button id="btn_JSONj" onclick="go('JSONj')">JSONj</button>
+                    <button id="btn_Promises" onclick="go('Promises')">Promises</button>
+                </div>
+
+            </section>
+        </header>
+        <article>
+            <section id="jsbasics" class="bg-blue">
+                <h3>JS Basics</h3>
+                <aside class="">
+                    <div>
+                        <p>
+                            <a>On page script</a>
+                        <blockquote>&lt;script type="text/javascript"> ...
+                            &lt;/script></blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Include external JS file</a>
+                        <blockquote>&lt;script src="filename.js">&lt;/script></blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Delay - 1 second timeout</a>
+                        <blockquote>setTimeout(function () {<br>
+                            ...<br>
+                            }, 1000);
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Functions</a>
+                        <blockquote>function addNumbers(a, b) {<br>
+                            return a + b; ;<br>
+                            }<br>
+                            x = addNumbers(1, 2);
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Edit DOM element</a>
+                        <blockquote>document.getElementById("elementID").innerHTML = "Hello World!";
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Output</a>
+                        <blockquote>// write to the browser console<br>console.log(a);<br><br>
+                            // write to the HTML<br>document.write(a);<br><br>
+                            // output in an alert box<br>alert(a);<br><br>
+                            // yes/no dialog, returns true/false depending on user click<br>confirm("Really?");<br><br>
+                            // input dialog. Second argument is the initial value<br>prompt("Your age?","0");
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Comments</a>
+                        <blockquote>/* Multi line<br>
+                            comment */<br><br>
+                            // One line
+                        </blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="loop" class="bg-white">
+                <h3>Loops</h3>
+                <aside class="">
+                    <div>
+                        <p>
+                            <a>For Loop</a> The for statement creates a loop with 3 optional expressions:
+                        <blockquote>for (var i = 0; i &lt; 10; i++) {<br>
+                            ...<br>
+                            }<br><br>
+                            for (var i of custOrder) {<br>
+                            ...<br>
+                            }</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>While Loop</a> The while loop loops through a block of code as long as a specified
+                            condition is true.
+                        <blockquote>var i = 1;<br>
+                            while (i &lt; 100) {<br>
+                            i *= 2;<br>
+                            document.write(i + ", ");<br>
+                            }</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Do While Loop</a> This loop will execute the code block once, before checking if the
+                            condition is true, then it will repeat the loop as long as the condition is true.
+                        <blockquote>var i = 1;<br>
+                            do {<br>
+                            i *= 2;<br>
+                            document.write(i + ", ");<br>
+                            } while (i &lt; 100) </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Break</a> The break statement "jumps out" of a loop.
+                        <blockquote>for (var i = 0; i &lt; 10; i++) {<br>
+                            if (i == 5) { break; }<br>
+                            document.write(i + ", ");<br>
+                            }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Continue</a> The continue statement "jumps over" one iteration in the loop.
+                        <blockquote>for (var i = 0; i &lt; 10; i++) {<br>
+                            if (i == 5) { continue; }<br>
+                            document.write(i + ", ");<br>
+                            }
+                        </blockquote>
+                        </p>
+                    </div>
+
+                </aside>
+            </section>
+
+
+
+            <section id="IfElse" class="bg-blue">
+                <h3>If-Else</h3>
+                <aside class="flex">
+                    <div>
+                        <p>
+                            <a>If-Else</a><br>Use if to specify a block of code to be executed, if a specified condition
+                            is true<br>
+                            Use else to specify a block of code to be executed, if the same condition is false<br>
+                            Use else if to specify a new condition to test, if the first condition is false
+                        <blockquote>if ((age >= 14) && (age &lt; 19)) {&emsp;&emsp;&emsp;// logical condition<br>
+                            status = "Eligible.";&emsp;&emsp;&emsp;&emsp;&emsp;// executed if condition is true<br>
+                            } else {&emsp;&emsp;&emsp;&emsp;&emsp;// else block is optional<br>
+                            status = "Not eligible.";&emsp;&emsp;&emsp;&emsp;&emsp;// executed if condition is false
+                            }</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Switch Statement</a><br>Use the switch statement to select one of many code blocks to be
+                            executed.
+                        <blockquote>switch (new Date().getDay()) {<br>
+                            case 6:<br>
+                            text = "Saturday";<br>
+                            break;<br>
+                            case 0:<br>
+                            text = "Sunday";<br>
+                            break;<br>
+                            default:<br>
+                            text = "Whatever";<br>
+                            }
+                        </blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="Variablesx" class="bg-dark">
+                <h3>Variables x</h3>
+                <aside class="">
+                    <div>
+                        <p>var a;&emsp; // variable<br>
+                            var b = "init";&emsp; // string<br>
+                            var c = "Hi" + " " + "Joe";&emsp; // = "Hi Joe"<br>
+                            var d = 1 + 2 + "3";&emsp; // = "33"<br>
+                            var e = [2,3,5,8];&emsp; // array<br>
+                            var f = false;&emsp; // boolean<br>
+                            var g = /()/;&emsp; // RegEx<br>
+                            var h = function(){};&emsp; // function object<br>
+                            const PI = 3.14;&emsp; // constant<br>
+                            var a = 1, b = 2, c = a + b;&emsp; // one line<br>
+                            let z = 'zzz';&emsp; // block scope local variable<br>
+                        </p>
+                    </div>
+
+                </aside>
+            </section>
+
+
+            <section id="DataTypes" class="bg-blue">
+                <h3>Data Types</h3>
+                <aside class="">
+                    <div>
+                        <p>
+                            <a>Strings</a> Strings are written with quotes. You can use single or double quotes.
+                        <blockquote>// Using double quotes:<br>
+                            let carName1 = "Volvo XC60";<br><br>
+
+                            // Using single quotes:<br>
+                            let carName2 = 'Volvo XC60';<br>
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Numbers</a> Numbers can be written with, or without decimals.
+                        <blockquote>// With decimals:<br>
+                            let x1 = 34.00;<br><br>
+
+                            // Without decimals:<br>
+                            let x2 = 34;<br><br>
+
+                            let y = 123e5; // 12300000<br><br>
+                            let z = 123e-5; // 0.00123
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>BigInt</a> JavaScript BigInt is a new datatype (ES2020) that can be used to store integer
+                            values that are too big to be represented by a normal JavaScript Number.
+                        <blockquote>let x = BigInt("123456789012345678901234567890");
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Booleans</a> Booleans can only have two values: true or false.
+                        <blockquote>let x = 5;<br>
+                            let y = 5;<br>
+                            let z = 6;<br>
+                            (x == y) // Returns true<br>
+                            (x == z) // Returns false
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Arrays</a> JavaScript arrays are written with square brackets. Array items are separated
+                            by commas.
+                        <blockquote>const cars = ["Saab", "Volvo", "BMW"];
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Objects</a> Object properties are written as name:value pairs, separated by commas.
+                        <blockquote>const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>The typeof Operator</a> The typeof operator returns the type of a variable or an
+                            expression.
+                        <blockquote>typeof "" // Returns "string"<br>
+                            typeof "John" // Returns "string"<br>
+                            typeof "John Doe" // Returns "string"
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Undefined</a>
+                        <blockquote>let car; // Value is undefined, type is undefined<br><br>
+                            car = undefined; // Value is undefined, type is undefined
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Empty Values</a> An empty value has nothing to do with undefined. An empty string has
+                            both a legal value and a type.
+                        <blockquote>let car = ""; // The value is "", the typeof is "string"
+                        </blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+
+            <section id="Strings" class="bg-white">
+                <h3>Strings</h3>
+                <aside class="">
+                    <div>
+                        <pre><blockquote>var abc = "abcdefghijklmnopqrstuvwxyz";
+var esc = 'I don\'t \n know';   // \n new line
+var len = abc.length;           // string length
+abc.indexOf("lmno");            // find substring, -1 if doesn't contain 
+abc.lastIndexOf("lmno");        // last occurance
+abc.slice(3, 6);                // cuts out "def", negative values count from behind
+abc.replace("abc","123");       // find and replace, takes regular expressions
+abc.toUpperCase();              // convert to upper case
+abc.toLowerCase();              // convert to lower case
+abc.concat(" ", str2);          // abc + " " + str2
+abc.charAt(2);                  // character at index: "c"
+abc[2];                         // unsafe, abc[2] = "C" doesn't work
+abc.charCodeAt(2);              // character code at index: "c" -> 99
+abc.split(",");                 // splitting a string on commas gives an array
+abc.split("");                  // splitting on characters
+128.toString(16);               // number to hex(16), octal (8) or binary (2)
+                        </blockquote></pre>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="Events" class="bg-dark">
+                <h3>Events</h3>
+                <aside class="">
+                    <div>
+                        <p>
+                            &lt;button onclick="myFunction();">
+                            Click here
+                            &lt;/button><br>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Mouse</a>
+                        <blockquote>onclick, oncontextmenu, ondblclick, onmousedown, onmouseenter, onmouseleave,
+                            onmousemove, onmouseover, onmouseout, onmouseup
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Keyboard</a>
+                        <blockquote>onkeydown, onkeypress, onkeyup</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Frame</a>
+                        <blockquote>onabort, onbeforeunload, onerror, onhashchange, onload, onpageshow, onpagehide,
+                            onresize, onscroll, onunload
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Form</a>
+                        <blockquote>onblur, onchange, onfocus, onfocusin, onfocusout, oninput, oninvalid, onreset,
+                            onsearch, onselect, onsubmit</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Drag</a>
+                        <blockquote>ondrag, ondragend, ondragenter, ondragleave, ondragover, ondragstart, ondrop
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Clipboard</a>
+                        <blockquote>oncopy, oncut, onpaste</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Media</a>
+                        <blockquote>onabort, oncanplay, oncanplaythrough, ondurationchange, onended, onerror,
+                            onloadeddata, onloadedmetadata, onloadstart, onpause, onplay, onplaying, onprogress,
+                            onratechange, onseeked, onseeking, onstalled, onsuspend, ontimeupdate, onvolumechange,
+                            onwaiting</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Animation</a>
+                        <blockquote>animationend, animationiteration, animationstart</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Miscellaneous</a>
+                        <blockquote>transitionend, onmessage, onmousewheel, ononline, onoffline, onpopstate, onshow,
+                            onstorage, ontoggle, onwheel, ontouchcancel, ontouchend, ontouchmove, ontouchstart
+                        </blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+
+            <section id="NumbersandMath" class="bg-white">
+                <h3>Numbers and Math</h3>
+                <aside class="">
+                    <div>
+                        <pre><p>var pi = 3.141;
+pi.toFixed(0);          // returns 3
+pi.toFixed(2);          // returns 3.14 - for working with money
+pi.toPrecision(2)       // returns 3.1
+pi.valueOf();           // returns number
+Number(true);           // converts to number
+Number(new Date())      // number of milliseconds since 1970
+parseInt("3 months");   // returns the first number: 3
+parseFloat("3.5 days"); // returns 3.5
+Number.MAX_VALUE        // largest possible JS number
+Number.MIN_VALUE        // smallest possible JS number
+Number.NEGATIVE_INFINITY// -Infinity
+Number.POSITIVE_INFINITY// Infinity</p></pre>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Math.</a>
+                        <pre><blockquote>var pi = Math.PI;       // 3.141592653589793
+Math.round(4.4);        // = 4 - rounded
+Math.round(4.5);        // = 5
+Math.pow(2,8);          // = 256 - 2 to the power of 8
+Math.sqrt(49);          // = 7 - square root 
+Math.abs(-3.14);        // = 3.14 - absolute, positive value
+Math.ceil(3.14);        // = 4 - rounded up
+Math.floor(3.99);       // = 3 - rounded down
+Math.sin(0);            // = 0 - sine
+Math.cos(Math.PI);      // OTHERS: tan,atan,asin,acos,
+Math.min(0, 3, -2, 2);  // = -2 - the lowest value
+Math.max(0, 3, -2, 2);  // = 3 - the highest value
+Math.log(1);            // = 0 natural logarithm 
+Math.exp(1);            // = 2.7182pow(E,x)
+Math.random();          // random number between 0 and 1
+Math.floor(Math.random() * 5) + 1;  // random integer, from 1 to 5</blockquote></pre>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Constants like Math.PI</a>
+                        <blockquote>E, PI, SQRT2, SQRT1_2, LN2, LN10, LOG2E, Log10E</blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="Dates" class="bg-blue">
+                <h3>Dates</h3>
+                <aside class="">
+                    <div>
+                        <pre><blockquote>Tue Apr 09 2024 21:27:00 GMT-0600 (Mountain Daylight Time)
+var d = new Date();
+1712719620652 miliseconds passed since 1970
+Number(d) 
+Date("2017-06-23");                 // date declaration
+Date("2017");                       // is set to Jan 01
+Date("2017-06-23T12:00:00-09:45");  // date - time YYYY-MM-DDTHH:MM:SSZ
+Date("June 23 2017");               // long date format
+Date("Jun 23 2017 07:45:00 GMT+0100 (Tokyo Time)"); // time zone</blockquote></pre>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Get Times</a>
+                        <pre><blockquote>var d = new Date();
+a = d.getDay();     // getting the weekday
+                            
+getDate();          // day as a number (1-31)
+getDay();           // weekday as a number (0-6)
+getFullYear();      // four digit year (yyyy)
+getHours();         // hour (0-23)
+getMilliseconds();  // milliseconds (0-999)
+getMinutes();       // minutes (0-59)
+getMonth();         // month (0-11)
+getSeconds();       // seconds (0-59)
+getTime();          // milliseconds since 1970</blockquote></pre>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Setting part of a date</a>
+                        <pre><blockquote>var d = new Date();
+d.setDate(d.getDate() + 7); // adds a week to a date
+                        
+setDate();          // day as a number (1-31)
+setFullYear();      // year (optionally month and day)
+setHours();         // hour (0-23)
+setMilliseconds();  // milliseconds (0-999)
+setMinutes();       // minutes (0-59)
+setMonth();         // month (0-11)
+setSeconds();       // seconds (0-59)
+setTime();          // milliseconds since 1970</blockquote></pre>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="Arrays" class="bg-dark">
+                <h3>Arrays</h3>
+                <aside class="">
+                    <div>
+                        <pre><blockquote>var dogs = ["Bulldog", "Beagle", "Labrador"]; 
+var dogs = new Array("Bulldog", "Beagle", "Labrador");  // declaration
+                        
+alert(dogs[1]);             // access value at index, first item being [0]
+dogs[0] = "Bull Terier";    // change the first item
+                        
+for (var i = 0; i &lt; dogs.length; i++) {     // parsing with array.length
+console.log(dogs[i]);
+}</blockquote></pre>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Methods</a> concat, copyWithin, every, fill, filter, find, findIndex, forEach, indexOf,
+                            isArray, join, lastIndexOf, map, pop, push, reduce, reduceRight, reverse, shift, slice,
+                            some, sort, splice, toString, unshift, valueOf
+                        <blockquote>// convert to string: results "Bulldog,Beagle,Labrador"<br>dogs.toString();<br><br>
+                            // join: "Bulldog * Beagle * Labrador"<br>dogs.join(" * ");<br><br>
+                            // remove last element<br>dogs.pop();<br><br>
+                            // add new element to the end<br>dogs.push("Chihuahua");<br><br>
+                            // the same as push<br>dogs[dogs.length] = "Chihuahua";<br><br>
+                            // remove first element<br>dogs.shift();<br><br>
+                            // add new element to the beginning<br>dogs.unshift("Chihuahua");<br><br>
+                            // change element to undefined (not recommended)<br>delete dogs[0];<br><br>
+                            // add elements (where, how many to remove, element list)<br>dogs.splice(2, 0, "Pug",
+                            "Boxer");<br><br>
+                            // join two arrays (dogs followed by cats and birds)<br>var animals =
+                            dogs.concat(cats,birds);<br><br>
+                            // elements from [1] to [4-1]<br>dogs.slice(1,4);<br><br>
+                            // sort string alphabetically<br>dogs.sort();<br><br>
+                            // sort string in descending order<br>dogs.reverse();<br><br>
+                            // numeric sort<br>x.sort(function(a, b){return a - b});<br><br>
+                            // numeric descending sort<br>x.sort(function(a, b){return b - a});<br><br>
+                            // first item in sorted array is the lowest (or highest) value<br>highest = x[0];<br><br>
+                            // random order sort<br>x.sort(function(a, b){return 0.5 - Math.random()});</blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="GlobalFunctions" class="bg-white">
+                <h3>Global Functions()</h3>
+                <aside class="">
+                    <div>
+                        <p>
+                            <a>Modifiers</a> concat, copyWithin, every, fill, filter, find, findIndex, forEach, indexOf,
+                            isArray, join, lastIndexOf, map, pop, push, reduce, reduceRight, reverse, shift, slice,
+                            some, sort, splice, toString, unshift, valueOf
+                        <blockquote>// executes a string as if it was script code<br>eval(); <br><br>
+                            // return string from number<br>String(23); <br><br>
+                            // return string from number<br>(23).toString(); <br><br>
+                            // return number from string<br>Number("23");<br><br>
+                            // decode URI. Result: "my page.asp"<br>decodeURI(enc);<br><br>
+                            // encode URI. Result: "my%page.asp"<br>encodeURI(uri);<br><br>
+                            // decode a URI component<br>decodeURIComponent(enc);<br><br>
+                            // encode a URI component<br>encodeURIComponent(uri);<br><br>
+                            // is variable a finite, legal number<br>isFinite();<br><br>
+                            // is variable an illegal number<br>isNaN();<br><br>
+                            // returns floating point number of string<br>parseFloat();<br><br>
+                            // parses a string and returns an integer<br>parseInt(); </blockquote>
+                        </p>
+                    </div>
+
+                </aside>
+            </section>
+
+            <section id="RegularExpressions" class="bg-blue">
+                <h3>Regular Expressions</h3>
+                <aside class="">
+                    <div>
+                        <p>var a = str.search(/CheatSheet/i);</p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Modifiers</a>
+                        <blockquote>i&emsp;&emsp;performcase-insensitive matching<br>
+                            g&emsp;&emsp;perform a global match<br>
+                            m&emsp;&emsp;perform multiline matching</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Patterns</a>
+                        <blockquote>\&emsp;&emsp;Escape character<br>
+                            \d&emsp;&emsp;find a digit<br>
+                            \s&emsp;&emsp;find a whitespace character<br>
+                            \b&emsp;&emsp;find match at beginning or end of a word<br>
+                            n+&emsp;&emsp;contains at least one n<br>
+                            n*&emsp;&emsp;contains zero or more occurrences of n<br>
+                            n?&emsp;&emsp;contains zero or one occurrences of n<br>
+                            ^&emsp;&emsp;Start of string<br>
+                            $&emsp;&emsp;End of string<br>
+                            \uxxxx&emsp;&emsp;find the Unicode character<br>
+                            .&emsp;&emsp;Any single character<br>
+                            (a|b)&emsp;&emsp;a or b<br>
+                            (...)&emsp;&emsp;Group section<br>
+                            [abc]&emsp;&emsp;In range (a, b or c)<br>
+                            [0-9]&emsp;&emsp;any of the digits between the brackets<br>
+                            [^abc]&emsp;&emsp;Not in range<br>
+                            \s&emsp;&emsp;White space<br>
+                            a?&emsp;&emsp;Zero or one of a<br>
+                            a*&emsp;&emsp;Zero or more of a<br>
+                            a*?&emsp;&emsp;Zero or more, ungreedy<br>
+                            a+&emsp;&emsp;One or more of a<br>
+                            a+?&emsp;&emsp;One or more, ungreedy<br>
+                            a{2}&emsp;&emsp;Exactly 2 of a<br>
+                            a{2,}&emsp;&emsp;2 or more of a<br>
+                            a{,5}&emsp;&emsp;Up to 5 of a<br>
+                            a{2,5}&emsp;&emsp;2 to 5 of a<br>
+                            a{2,5}?&emsp;&emsp;2 to 5 of a, ungreedy<br>
+                            [:punct:]&emsp;&emsp;Any punctu­ation symbol<br>
+                            [:space:]&emsp;&emsp;Any space character<br>
+                            [:blank:]&emsp;&emsp;Space or tab</blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="Errors" class="bg-white">
+                <h3>Errors</h3>
+                <aside class="">
+                    <div>
+                        <p>Throw, and Try...Catch...Finally<br>
+                            The try statement defines a code block to run (to try).<br>
+
+                            The catch statement defines a code block to handle any error.<br>
+
+                            The finally statement defines a code block to run regardless of the result.
+
+                            The throw statement defines a custom error.
+                        <blockquote>
+                            try {<br>
+                            Block of code to try<br>
+                            }<br>
+                            catch(err) {<br>
+                            Block of code to handle errors<br>
+                            }<br>
+                            finally {<br>
+                            Block of code to be executed regardless of the try / catch result<br>
+                            }</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Throw error</a>
+                        <blockquote>throw "Too big";&emsp;&emsp;// throw a text<br>
+                            throw 500;&emsp;&emsp;// throw a number</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Input validation</a>
+                        <pre><blockquote>var x = document.getElementById("mynum").value; // get input value
+try { 
+if(x == "")  throw "empty";                 // error cases
+if(isNaN(x)) throw "not a number";
+x = Number(x);
+if(x > 10)   throw "too high";
+}
+catch(err) {                                    // if there's an error
+document.write("Input is " + err);          // output error
+console.error(err);                         // write the error in console
+}
+finally {
+document.write("&lt;/br />Done");     // executed regardless of the try / catch result
+}</blockquote></pre>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Error name values</a>
+                        <pre><blockquote>RangeError&emsp;&emsp;&emsp;&emsp;A number is "out of range"
+ReferenceError&emsp;&emsp;&emsp;&emsp;An illegal reference has occurred
+SyntaxError&emsp;&emsp;&emsp;&emsp;A syntax error has occurred
+TypeError&emsp;&emsp;&emsp;&emsp;A type error has occurred
+URIError&emsp;&emsp;&emsp;&emsp;An encodeURI() error has occurred</blockquote></pre>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+
+            <section id="JSONj" class="bg-dark">
+                <h3>JSON j</h3>
+                <aside class="">
+                    <div>
+                        <pre><p><blockquote>var str = '{"names":[' +                    // crate JSON object
+'{"first":"Hakuna","lastN":"Matata" },' +
+'{"first":"Jane","lastN":"Doe" },' +
+'{"first":"Air","last":"Jordan" }]}';
+obj = JSON.parse(str);                      // parse
+document.write(obj.names[1].first);         // access</blockquote></p></pre>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Send</a>
+                        <blockquote>var myObj = { "name":"Jane", "age":18, "city":"Chicago" }; &emsp;&emsp;// create
+                            object<br>
+                            var myJSON = JSON.stringify(myObj); &emsp;&emsp;// stringify<br>
+                            window.location = "demo.php?x=" + myJSON; </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Storing and retrieving</a>
+                        <blockquote>myObj = { "name":"Jane", "age":18, "city":"Chicago" };<br>
+                            myJSON = JSON.stringify(myObj);&emsp;&emsp; // storing data<br>
+                            localStorage.setItem("testJSON", myJSON); <br>
+                            text = localStorage.getItem("testJSON");&emsp;&emsp; // retrieving data <br>
+                            obj = JSON.parse(text);<br>
+                            document.write(obj.name);</blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+
+            <section id="Promises" class="bg-white">
+                <h3>Promises</h3>
+                <aside class="">
+                    <div>
+                        <pre><p><blockquote>function sum (a, b) {
+return Promise(function (resolve, reject) { 
+ setTimeout(function () {                                       // send the response after 1 second
+   if (typeof a !== "number" || typeof b !== "number") {        // testing input types
+     return reject(new TypeError("Inputs must be numbers"));
+   }
+   resolve(a + b);
+ }, 1000);
+});
+}
+var myPromise = sum(10, 5);
+myPromsise.then(function (result) {
+document.write(" 10 + 5: ", result);
+return sum(null, "foo");  // Invalid data and return another promise
+}).then(function () {     // Won't be called because of the error
+}).catch(function (err) { // The catch handler is called instead, after another second
+console.error(err);       // => Please provide two numbers to sum.
+});</blockquote></p></pre>
+                    </div>
+                    <div>
+                        <p>
+                            <a>States</a>
+                        <blockquote>pending, fulfilled, rejected</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Properties</a>
+                        <blockquote>Promise.length, Promise.prototype</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Methods</a>
+                        <blockquote>Promise.all(iterable), Promise.race(iterable), Promise.reject(reason),
+                            Promise.resolve(value)</blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+
+            <footer>
+                <section>
+                    <cite id="cite1">Final project of TECH1101: Web and Internet Fundamentals by 457647 - Yosita
+                        Jasamut<br>Reference&emsp;<i class="fa fa-link"></i>&nbsp<a
+                            href="https://htmlcheatsheet.com/js/" target="_blank">htmlcheatsheet</a>
+                        &nbsp<i class="fa fa-link"></i>&nbsp<a
+                            href="https://www.geeksforgeeks.org/javascript-cheat-sheet-a-basic-guide-to-javascript/"
+                            target="_blank">geeksforgeeks</a>
+                        &nbsp<i class="fa fa-link"></i>&nbsp<a href="https://www.w3schools.com/jsref/default.asp"
+                            target="_blank">w3schools</a></cite>
+                </section>
+            </footer>
+        </article>
+
+
+    </main>
+
+</body>
+
+</html>

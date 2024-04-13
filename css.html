@@ -1,0 +1,464 @@
+<!doctype html>
+
+<html lang="en">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>CSS - Yosita</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css.css">
+
+</head>
+
+<script>
+    var arr_content = ['cssbasics', 'selectors', 'fontproperties', 'textproperties', 'backgroundproperties', 'boxproperties']
+    function go(content) {
+
+        for (let i of arr_content) {
+            if (i == content || content == 'all') {
+                document.getElementById(i).style.display = 'block';
+                if (content == 'all') {
+                    document.getElementById('btn_' + i).style.backgroundColor = '#a7cec9';
+                    document.getElementById('btn_all').style.backgroundColor = 'white';
+                } else {
+                    document.getElementById('btn_' + i).style.backgroundColor = 'white';
+                    document.getElementById('btn_all').style.backgroundColor = '#a7cec9';
+                }
+
+            } else {
+                document.getElementById(i).style.display = 'none';
+                document.getElementById('btn_' + i).style.backgroundColor = '#a7cec9';
+            }
+        }
+    }
+</script>
+
+<body>
+    <main>
+        <header>
+            <nav>
+                <ul>
+                    <li><a id="logo" href="#">CSS Cheat Sheet</a></li>
+                </ul>
+                <div>
+                    <img width="64" height="64"
+                        src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/100/external-css-computer-programming-icons-flaticons-lineal-color-flat-icons-2.png"
+                        alt="external-css-computer-programming-icons-flaticons-lineal-color-flat-icons-2" /><br>
+                </div>
+            </nav>
+
+            <section id="menu">
+
+                <div>
+                    <button id="btn_all" onclick="go('all')">All</button>
+                    <button id="btn_cssbasics" onclick="go('cssbasics')">CSS Basics</button>
+                    <button id="btn_selectors" onclick="go('selectors')">Selectors</button>
+                    <button id="btn_fontproperties" onclick="go('fontproperties')">Font Properties</button>
+                    <button id="btn_textproperties" onclick="go('textproperties')">Text Properties</button>
+                    <button id="btn_backgroundproperties" onclick="go('backgroundproperties')">Color and Background
+                        Properties</button>
+                    <button id="btn_boxproperties" onclick="go('boxproperties')">Box Properties</button>
+
+                </div>
+
+            </section>
+        </header>
+        <article>
+            <section id="cssbasics" class="bg-dark">
+                <h3>CSS Basics</h3>
+                <aside class="flex">
+                    <div>
+                        <p>
+                            <a>External CSS:</a> External CSS contains a separate CSS file with a .css extension which
+                            contains
+                            only style property with the help of tag attributes.
+                        <blockquote>selector{<br>
+                            property1: value1;<br>
+                            property2: value2;<br>
+                            }</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Include external CSS file:</a> The external CSS file is linked to the HTML document using
+                            a link
+                            tag.
+                        <blockquote>&lt;link rel="stylesheet" type="text/css" href="/style.css" ></blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Internal CSS or Embedded:</a> CSS is embedded within the HTML file using a style HTML
+                            tag.
+                        <blockquote>&lt;style type="text/css"><br>
+                            div { color: #444;}<br>
+                            &lt;/style>
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Inline CSS:</a> It contains CSS properties in the body section specified within HTML
+                            tags.
+                        <blockquote>&lt;tag style="property: value">&lt;/tag>
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Clearfix:</a> It clears floats to select or control margins and padding.
+                        <blockquote>.clearfix::after {<br>
+                            content: "";<br>
+                            clear: both;<br>
+                            display: block;<br>
+                            }
+                        </blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="selectors" class="bg-white">
+                <h3>Selectors</h3>
+                <aside class="">
+                    <div>
+                        <p>
+                            <a>Universal:</a> Selects all elements on the pages.
+                        <blockquote>*{property:value;}</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Type:</a> Selects all HTML tag/element of given type in your document.
+                        <blockquote>p {property:value;}</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Id:</a> Selects an element based on the value of its unique id attribute
+                        <blockquote>#id {property:value;}</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Class:</a> Selects all elements in the document that have the given class attribute.
+                        <blockquote>.class {property:value;}
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Attribute:</a> Selects all elements that have a specified attribute.
+                        <blockquote>a[attribute=value] {property:value;}
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Combinators:</a> Complex selectors consisting of more than one selectors having some
+                            relationship between them.
+                        <blockquote>selector1 selector2/ selector 1+selector2 / selector 1> selector 2 {property:
+                            value;}
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Pseudo:</a> Define the special state of an element to add an effect to an existing
+                            element based on its states.
+                        <blockquote>selector:pseudo-class {property: value;}
+                        </blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+
+
+            <section id="fontproperties" class="bg-blue">
+                <h3>Font Properties</h3>
+                <aside class="">
+                    <div>
+                        <p>
+                            <a>font-family: family-name | generic-family | initial | inherit;</a>
+                        <blockquote>p { font-family: "New Century Schoolbook", Times, serif; }</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>font-style: normal | italic | oblique | initial | inherit;</a>
+                        <blockquote>h1 { font-style: oblique; }<br>
+                            p { font-style: normal; }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>font-variant: normal | small caps | initial;</a>
+                        <blockquote>span { font-variant: small-caps; } /style>
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>font-weight: normal | bold | number | initial | inherit | unset;</a>
+                        <blockquote>h1 { font-weight: 800; }<br>p { font-weight: normal; }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>font-size: small | medium | large | initial | inherit;</a>
+                        <blockquote>h1 { font-size: large; }<br>
+                            p { font-size: 12pt; }<br>
+                            li { font-size: 90%; }<br>
+                            strong { font-size: larger; }
+                        </blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="textproperties" class="bg-dark">
+                <h3>Text Properties</h3>
+                <aside class="">
+                    <div>
+                        <p>
+                            <a>Text-color:</a> Sets the color of the text.
+                        <blockquote>p { color: value; }</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Text-alignment:</a> Defines the horizontal alignment of the text.
+                        <blockquote>text-align: left | right | center | justify | initial | inherit;
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Text-decoration</a> Add or remove text- decorations.
+                        <blockquote>text-decoration: decoration-type;
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Text-transformation:</a> Changes the case(uppercase|lowercase) of text.
+                        <blockquote>text-transform:
+                            none | capitalize | uppercase |
+                            lowercase | initial | inherit;
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Text-indentation:</a> Indents the first line of text block.
+                        <blockquote>text-indent:
+                            length | initial | inherit;
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Line height:</a> Specifies the space between the lines of the text.
+                        <blockquote>line-height:
+                            normal | number | length |
+                            percentage | initial | inherit;
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Text-shadow:</a> Adds shadow to the text.
+                        <blockquote>text-shadow:
+                            h-shadow v-shadow
+                            blur-radius
+                            color | none | initial | inherit;
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Word spacing:</a> Specifies space between words of lines.
+                        <blockquote>word-spacing:
+                            normal | length |
+                            initial | inherit;
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Letter spacing:</a> Specifies spacing between the characters of the text.
+                        <blockquote>letter-spacing:
+                            normal | length |
+                            initial | inherit;
+                        </blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+
+            <section id="backgroundproperties" class="bg-blue">
+                <h3>Color and Background Properties</h3>
+                <aside class="">
+                    <div>
+                        <p>
+                            <a>Color:</a> Changes the color of text.
+                        <blockquote>h1 { color: blue; }<br>h2 { color: #000080; } </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Background-Color:</a> Sets the background color of an element.
+                        <blockquote>body { background-color: white; }<br>
+                            h1 { background-color: #000080; }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Background-Image:</a> Sets the background image of an element.
+                        <blockquote>body { background-image: url(/images/foo.gif); }<br>
+                            p { background-image: url(http://www.htmlhelp.com/bg.png); }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Background-Repeat:</a> Determines how a specified background image is repeated.
+                            The repeat-x value will repeat the image horizontally while the
+                            repeat-y value will repeat the image vertically.
+                        <blockquote>body { background: white url(candybar.gif);
+                            background-repeat: repeat-x; }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Background-Attachment:</a> Determines if a specified background image will scroll with
+                            the
+                            content or be fixed with regard to the canvas.
+                        <blockquote>body { background: white url(candybar.gif);
+                            background-attachment: fixed; }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Background:</a> Used to combine all properties of background.
+                        <blockquote>body { background: white url(http://www.htmlhelp.com/foo.gif); }<br>
+                            blockquote { background: #7fffd4; }<br>
+                            p { background: url(../backgrounds/pawn.png) #f0f8ff fixed; }<br>
+                            table { background: red url(leaves.jpg) no-repeat bottom right; }
+                        </blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+
+            <section id="boxproperties" class="bg-white">
+                <h3>Box Properties</h3>
+                <aside class="">
+                    <div>
+                        <p>
+                            <a>Margin:</a> Sets the margins of an element by specifying top, bottom, left
+                            and right margins -- all either specifying length or percentage.
+                        <blockquote>body { margin: 5em; } /* all margins 5em */<br>
+                            p { margin: 2em 4em; } /* top & bottom 2em, left & right 4em */<br>
+                            div { margin: 1em 2em 3em 4em; }
+                            /* top margin 1em, right 2em, bottom 3em, left 4em */</blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Padding:</a> Specifies the space between the border and the content of the selector.
+                            Shorthand for the padding-top, padding-right, padding-bottom,
+                            and padding-left properties.
+                        <blockquote>blockquote { padding: 2em 4em 5em 4em; }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Border:</a> Sets the element’s border width and set the style, and color of an element’s
+                            border. Sets the width, style, and color of an element's border.
+
+                        <blockquote>p { border: 10px, red, double; }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Width:</a> Each block-level or replaced element can be given a width,
+                            specified as a length, a percentage, or as auto.
+                        <blockquote>p { width: 15px; }<br>
+                            h1 { width: 35%; }<br>
+                            .foo { width: auto; }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Height:</a> Each block-level or replaced element can be given a height,
+                            specified as a length or as auto.
+                        <blockquote>P { height: 15px; }<br>
+                            H1 { height: 35%; }<br>
+                            .foo { height: auto; }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Float:</a> Allows text to wrap around an element (left, right, none).
+                        <blockquote>p { float: left; }<br>
+                            h1 { float: right; }<br>
+                            .foo { float: none; }
+                        </blockquote>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <a>Clear:</a> Specifies whether an element allows floating elements to its
+                            sides (left, right, none).
+                        <blockquote>p { clear: left; }<br>
+                            h1 { clear: right; }<br>
+                            .foo { clear: none; }
+                        </blockquote>
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <footer>
+                <section>
+                    <cite id="cite1">Final project of TECH1101: Web and Internet Fundamentals by 457647 - Yosita
+                        Jasamut<br>Reference&emsp;<i class="fa fa-link"></i>&nbsp<a
+                            href="https://htmlcheatsheet.com/css/" target="_blank">htmlcheatsheet</a>
+                        &nbsp<i class="fa fa-link"></i>&nbsp<a
+                            href="https://www.geeksforgeeks.org/css-cheat-sheet-a-basic-guide-to-css/"
+                            target="_blank">geeksforgeeks</a>
+                        &nbsp<i class="fa fa-link"></i>&nbsp<a href="https://www.w3schools.com/cssref/index.php"
+                            target="_blank">w3schools</a></cite>
+                </section>
+            </footer>
+        </article>
+
+
+    </main>
+
+</body>
+
+</html>

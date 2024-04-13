@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+body {
+    background-color: #081430;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+section {
+    width: 50vw;
+    height: 100vh;
+}
+
+.teamA {
+    opacity: 0.2;
+    font-size: 39vw;
+    align-items: center;
+    height: 100vh;
+}
+
+.teamB {
+    opacity: 0.2;
+    font-size: 39vw;
+    align-items: center;
+}
+
+#teamA {
+    align-items: center;
+    background-color: #213159;
+    text-align: left;
+    height: 100vh;
+}
+
+#teamB {
+    background-color: #c1121f;
+    text-align: right;
+    align-items: center;
+}
+
+.flex-container {
+    background-color: white;
+    position: absolute;
+    width: 50vw;
+    min-height: 80vh;
+    left: 25vw;
+    top: 10vh;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgb(88, 88, 88);
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.flex-item-left {
+    padding: 10px;
+    flex: 50%;
+}
+
+.flex-item-right {
+    flex: 50%;
+    border-radius: 10px;
+    top: 10%;
+}
+
+h1 {
+    padding: 2vh;
+    text-transform: uppercase;
+    color: #c1121f;
+    align-items: start;
+    text-shadow: 2px 2px #213159;
+}
+
+
+
+h3 {
+    background-color: #213159;
+    color: white;
+    text-transform: uppercase;
+    margin: 1vh 1vh 3vh 1vh;
+    border-radius: 10px;
+    padding: 2vh;
+}
+
+h4 {
+    color: dodgerblue;
+
+}
+
+#info {
+    padding: 2vh;
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 2vh;
+}
+
+
+button {
+    background-color: rgb(208, 208, 208);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 1vh;
+    width: 10vh;
+    height: 10vh;
+}
+
+.player-drop {
+    display: block;
+    animation: drop 0.5s linear;
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(-800px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+}
+
+td div img {
+    margin: 5px;
+    width: 80px;
+    height: 80px;
+}
+
+.animate {
+    background-color: rgb(208, 208, 208);
+    width: 10vh;
+    height: 10vh;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+@media (max-width: 1000px) {
+    .flex-container {
+        flex-direction: column;
+        padding: 0;
+        min-height: 0;
+        margin: 0;
+        top: 4vh;
+    }
+
+    .flex-item-left {
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    .flex-item-right {
+        top: 0;
+    }
+
+    .howtowin {
+        padding: 0;
+        display: none;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        font-size: small;
+        margin: 2vh 5vh 0 5vh;
+        padding: 0;
+    }
+
+    table {
+        padding: 0 0 1vh 0;
+    }
+
+}
