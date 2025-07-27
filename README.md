@@ -1,3 +1,2 @@
-# TECH1101_FinalProject
-Create and upload your personal website
-https://yosipat.github.io/TECH1101_FinalProject/
+# My first portfolio
+[Live Demo](https://yosipat.github.io/FirstPortfolio/ConnectThreeGame/index.html)
