@@ -1,2 +1,2 @@
 # My first portfolio
-[Live Demo](https://yosipat.github.io/FirstPortfolio/ConnectThreeGame/index.html)
+[Live Demo](https://yosipat.github.io/FirstPortfolio/)
